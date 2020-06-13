@@ -1,0 +1,12 @@
+<apex:page standardController="Account" extensions="accDetails1">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection title="Current account record Id is : {!RecordId}" collapsible="false">
+                <apex:outputField value="{!accList1.name}"/>
+                <apex:outputField value="{!accList1.AccountNumber}"/>
+                <apex:outputField value="{!accList1.Phone}"/>
+                <apex:outputField value="{!accList1.Industry}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

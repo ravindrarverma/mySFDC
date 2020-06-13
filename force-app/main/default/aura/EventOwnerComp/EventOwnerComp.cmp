@@ -1,0 +1,9 @@
+<aura:component >
+    <!--OwnerComp-->
+    <!--clear with rathore-->
+    <!--http://simpluslabs.com/event-propagation-in-lightning-component/  -->
+    <aura:handler name="bubbleCaptureEvent" event="c:bubbleCaptureEvent" action="{!c.handleCapture}" phase="capture"/>
+	<!--<aura:handler name="bubbleCaptureEvent" event="c:bubbleCaptureEvent" action="{!c.handleBubbling}" />-->
+    
+    <c:EventContainerComp />
+</aura:component>

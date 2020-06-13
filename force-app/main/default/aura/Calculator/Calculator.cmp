@@ -1,0 +1,14 @@
+<aura:component implements="force:hasRecordId,flexipage:availableForRecordHome" access="global">
+    <aura:attribute name="input1" type="integer"  description="Enter First Number" />
+    <aura:attribute name="input2" type="integer" description="Enter Second Number" />
+    <aura:attribute name="output" type="integer" description="For Output" />
+    
+    <lightning:input type="number" value="{!v.input1}" label="Please Enter 1st Number" required="true" />
+    <lightning:input type="number" value="{!v.input2}" label="Please Enter 2st Number" required="true" />
+    The output is :- {!v.output} <br/>
+    <lightning:button label="Add" variant="brand" onclick="{!c.doAdd}" value="Component Methods" />
+    <lightning:button label="Sub" variant="brand" onclick="{!c.doSub}" value="Component Methods" />
+    <lightning:button label="Mul" variant="brand" onclick="{!c.doMul}" value="Component Methods" />
+    <lightning:button label="Div" variant="brand" onclick="{!c.doDiv}" value="Component Methods" />
+    
+</aura:component>

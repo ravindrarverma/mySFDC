@@ -1,0 +1,25 @@
+<aura:component controller="DisplayAccountRecordsInTable" >
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}"/>
+    <aura:attribute name="wrapList" type="List"/>
+    
+    <table style="width:100%">
+        <tr>
+            <th class="idd1">Id</th>
+            <th class="name">Name</th>
+            <th class="number">Number</th>
+            <th class="fax">Fax</th>
+            <th class="description">Description	</th>
+        </tr>
+        <aura:iteration items="{!v.wrapList}" var="wp">
+            <tr>
+               <td> <a herf="{!'/'+ wp.acc.Id}"> {!wp.acc.Id}
+                   </a></td>
+                <td class="green1"  >{!wp.acc.Name}</td>
+                <td class="lightblue1" >{!wp.acc.AccountNumber}</td>
+                <td class="grey1" >{!wp.acc.Fax}</td>
+                <td class="pink1" >{!wp.acc.Description}</td>
+                <td class="grey1" >{!wp.con.LastName}</td>
+            </tr>
+        </aura:iteration>
+    </table>
+</aura:component>

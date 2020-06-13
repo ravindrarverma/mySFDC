@@ -1,0 +1,17 @@
+<apex:page controller="testWrapperClass">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:pageBlockTable value="{!wrapperlist}" var="wr" >
+                    <apex:column value="{!wr.accName.Name}" />
+                    <apex:column value="{!wr.accName.Phone}" />
+                    <apex:column value="{!wr.conName.LastName}" />
+                    <apex:column value="{!wr.accName.ClosedLostTotal__c}" />
+                    <apex:column value="{!wr.accName.ClosedWonTotal__c}"/>
+                    <!--  <apex:column value="{!wr.Phone}" />-->
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

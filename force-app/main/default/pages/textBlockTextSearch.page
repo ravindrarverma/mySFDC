@@ -1,0 +1,22 @@
+<apex:page controller="SearchClass" >
+    <apex:sectionHeader title="Account List"/>
+    <apex:form >
+        <apex:inputText value="{!searchstring}" label="Input"/>
+        <apex:commandButton value="Search records" action="{!search}"/>
+        <apex:commandButton value="Clear records" action="{!clear}"/>
+        <apex:pageBlock title="Search Result">
+            <apex:PageblockTable value="{!accountList}" var="a" >
+                <apex:column >
+                    <apex:commandLink value="{!a.Name}" action="{!showDetail}">
+                        <apex:param name="aId" value="{!a.Id}" assignTo="{!aId}"/>
+                    </apex:commandLink>
+                </apex:column>
+                <!--<apex:column headerValue="Account hyperlink">
+          <apex:inputtext value="{!a.Id}" />
+              <apex:outputlink value="https://r-k-v-dev-ed.my.salesforce.com/apex/accDetails1?id ={!a.Id}">{!a.Name}</apex:outputlink>
+             </apex:column> -->
+                <apex:column value="{!a.Phone}"/>
+            </apex:PageblockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

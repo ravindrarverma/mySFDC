@@ -1,0 +1,14 @@
+<apex:page controller="Hierarchy">
+    <a href="http://forceschool.blogspot.com/2011/06/show-hierarchy-in-visualforce-page.html">Visit LINK(but not worked)</a>
+  <apex:form >
+     <apex:pageBlock >
+         <apex:pageblockSection columns="1" title="Hierarchy For {!AccountName}">
+             <apex:repeat value="{!hierarchyItemList}" var="item">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!item.itemValue}" escape="false"/>
+                </apex:pageBlockSectionItem>
+             </apex:repeat>
+         </apex:pageblockSection>
+     </apex:pageBlock>
+  </apex:form>
+ </apex:page>

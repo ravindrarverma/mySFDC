@@ -1,0 +1,48 @@
+<aura:component controller="modalClass"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="accdata" type="List"/>
+    <aura:attribute name="accForm" type="Account" default="{'sobjectType' : 'Account'}"/>
+    
+    <lightning:button label="Create Account "
+                      iconName="utility:new_window"
+                      iconPosition="left"
+                      variant="brand"
+                      onclick="{!c.newPopup}"
+                      />
+    
+    <div role="dialog" tabindex="-1" aria-labelledby="header43" aura:id="Modalbox1" class="slds-modal slds-modal_large">
+        <div class="slds-modal__container" style="width: 65%;">
+            <div class="slds-modal__header">
+                ACCOUNT
+            </div>
+            
+            <div class="slds-modal__content slds-p-around--medium">
+                <div class="slds-p-left_xx-large slds-p-right_xx-large">
+                    <div class="slds-page-header" style="padding-top: 9px; padding-bottom: 9px;, padding-right: 9px;, padding-left: 10px;">
+                        <h3 style="font-size: 1rem;" title="">Account Information</h3>
+                    </div> 
+                </div>    
+                <div class="slds-grid slds-p-top_medium">
+                    <div class="slds-size_6-of-12 slds-p-left_xx-large slds-p-horizontal_x-large " >
+                        <lightning:input label="Account Name" name="myname" value="{!v.accForm.Name}"/> 
+                    </div>
+                    <div class="slds-size_5-of-12 slds-p-left_xx-small slds-p-horizontal_x-large " >
+                        <lightning:input label="Phone" name="myname" value="{!v.accForm.Phone}"/> 
+                    </div>
+                </div>
+                <div class="slds-grid slds-p-top_x-small">
+                    <div class="slds-size_6-of-12 slds-p-left_xx-large slds-p-horizontal_x-large " >
+                        <lightning:input label="Account Number" name="mynumber" value="{!v.accForm.AccountNumber}"/> 
+                    </div>
+                    <div class="slds-size_5-of-12 slds-p-left_xx-small slds-p-horizontal_x-large " >
+                        <lightning:input label="Description" name="myphone" value="{!v.accForm.Description}"/> 
+                    </div>
+                </div>
+            </div>
+            <div class="slds-modal__footer">
+                <lightning:button label="Save" onclick="{!c.saveModal}" />
+                <lightning:button label="close" onclick="{!c.closeNewModal}" />
+            </div>
+        </div>
+    </div>
+</aura:component>

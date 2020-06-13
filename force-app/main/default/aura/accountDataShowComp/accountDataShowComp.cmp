@@ -1,0 +1,14 @@
+<aura:component controller= "accountDataShowClass" >
+    <aura:attribute name="dataList" type="List" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <table>
+        <tr>
+            <aura:iteration items="{!v.dataList}" var="v">
+                <td>{!v.con.AccountId}</td>
+                <td>{!v.opp.AccountId}</td>
+                <td>{!v.con.LastName}</td> 
+                
+            </aura:iteration> 
+        </tr>
+    </table>
+</aura:component>

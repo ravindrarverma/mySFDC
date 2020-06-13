@@ -1,0 +1,30 @@
+<apex:page Controller="accDetails">
+    <apex:form >
+        <apex:pageBlock title="Hello {!$User.FirstName}!"/>
+        <apex:pageBlock title="Details of Account"/>
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="4">
+                <apex:pageBlockTable value="{!accList}" var="acc" >
+                    <apex:column value="{!acc.Id}" />
+                    <apex:column value="{!acc.Name}" />
+                    <apex:column value="{!acc.Country__c}" />
+                    <apex:column value="{!acc.Subject__c}" />
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    <apex:form >
+        <apex:pageBlock >
+            <apex:outputPanel layout="block"  style="overflow:auto;width:850px;height:350px"><!--make scrollabel-->
+                <apex:pageBlockSection columns="4">
+                    <apex:dataTable value="{!accList}" var="acc"  style="pink" width="75%">
+                        <apex:column value="{!acc.Id}"  headerValue="Id"/>
+                        <apex:column value="{!acc.Name}" headerValue="Name" />
+                        <apex:column value="{!acc.Country__c}" headerValue="Country" />
+                        <apex:column value="{!acc.Subject__c}" headerValue="Subject" />
+                    </apex:dataTable>
+                </apex:pageBlockSection>
+            </apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

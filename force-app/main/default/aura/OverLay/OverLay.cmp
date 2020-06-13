@@ -1,0 +1,37 @@
+<aura:component  implements="flexipage:availableforAllPageTypes,force:hasRecordId" >
+    <lightning:overlayLibrary aura:id="overlayLib"/>
+    <lightning:button name="modal" label="Show Modal" onclick="{!c.createModal}"/>
+    <br/>
+    <lightning:navigation aura:id="navigation" />
+    <lightning:button value="navigation" label="navigation" onclick="{!c.navigateURL}"/>
+    {!v.body}
+  <!--  <lightning:recordViewForm recordId="{!v.recordId}" objectApiName="Account" >
+        <div class="slds-box">
+            <lightning:outputField fieldName="Name" />
+            <lightning:outputField fieldName="Industry" />
+            <lightning:outputField fieldName="Fax"/>
+            <lightning:outputField fieldName="Rating" />
+            <lightning:outputField fieldName="Phone" />
+        </div>
+    </lightning:recordViewForm>
+    <lightning:recordEditForm
+                              onload="{!c.handleLoad}"
+                              onsubmit="{!c.handleSubmit}"
+                              onsuccess="{!c.handleSuccess}"
+                              recordId="{!v.recordId}"
+                              objectApiName="Account"> -->
+        <!-- the messages component is for error messages -->
+  <!--      <lightning:messages />
+        
+        <lightning:inputField fieldName="Name" />
+        <lightning:inputField fieldName="Industry" />
+        <lightning:inputField fieldName="ParentId" />
+        
+        
+        <div class="slds-m-top_medium">
+            <lightning:button  variant="brand" type="submit" name="save" label="Save" />
+        </div>
+    </lightning:recordEditForm> 
+ -->
+    <lightning:button label="Create New Button" value="Create New Button" onclick="{!c.createButton}"/>
+</aura:component>

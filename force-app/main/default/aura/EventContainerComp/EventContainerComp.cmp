@@ -1,0 +1,8 @@
+<aura:component >
+	<!--ContainerComp-->
+        <!--clear with rathore-->
+
+    <aura:handler name="bubbleCaptureEvent" event="c:bubbleCaptureEvent" action="{!c.handleCapture}" phase="capture"/>
+    <!--<aura:handler name="bubbleCaptureEvent" event="c:bubbleCaptureEvent" action="{!c.handleBubbling}"/>-->
+    <c:EventsourceComp />
+</aura:component>

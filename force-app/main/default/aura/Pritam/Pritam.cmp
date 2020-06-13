@@ -1,0 +1,48 @@
+<aura:component controller="Details">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="detailsList" type="List"/>
+    <div>
+        <div>
+            <c:HeaderComponent TagLine="My Team Overview "
+                               message="My team Details" />
+            
+         <!--   <c:UserInfo /> -->
+            
+        </div>
+        
+    </div>
+    <table id="myTable" style="width:100%">
+        
+        <tr>
+            
+            <th> <div id="myTable">   
+                <lightning:button  label="Account Name"  />
+                </div></th>
+            <th> <div id="myTable">   
+                <lightning:button  label="Contact"  />
+                </div></th>
+            <th> <div id="myTable">   
+                <lightning:button  label="Pipeline Amount"  />
+                </div></th>
+            <th> <div id="myTable">   
+                <lightning:button  label="Closed"  />
+                </div></th>
+            <th> <div id="myTable">   
+                <lightning:button  label="Omitted"  />
+                </div></th>
+            <th> <div id="myTable">   
+                <lightning:button  label="Total"  />
+                </div></th>
+        </tr>
+        <aura:iteration items="{!v.detailsList}" var="dl">
+            <tr>
+                <td>{!dl.Account.Name}</td>
+                <td>{!dl.ForecastCategoryName}</td>
+                <!--  <td>{!dl.AccountNumber}</td>
+                <td>{!dl.Id}</td>
+                <td>{!dl.Id}</td> -->
+                
+            </tr>
+        </aura:iteration>
+    </table>
+</aura:component>

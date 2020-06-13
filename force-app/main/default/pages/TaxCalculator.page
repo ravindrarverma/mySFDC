@@ -1,0 +1,21 @@
+<apex:page controller="taxCalculaor"><!--renderAs="pdf"-->
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="4">
+                <apex:pageBlockTable value="{!taxlist}" var="a" >
+                    <!--     <apex:column value="{!a.Name}" />
+<apex:column value="{!a.Age__c}" />
+<apex:column value="{!a.Salary__c}" />
+<apex:column value="{!a.Total_Tax__c}" />-->
+                    <apex:column >
+                        <apex:inputText >
+                            <apex:actionSupport event="onclick" action="{!showDetail}" reRender="one"/>
+                            <apex:param name="accid" assignTo="{!accid}" value="{!a.id}"/>
+                        </apex:inputText>
+                        
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>   
+</apex:page>

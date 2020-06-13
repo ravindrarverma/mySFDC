@@ -1,0 +1,64 @@
+<aura:component >
+    <aura:attribute name="colourList" type="List" default="['red','yellow','green']"/>
+    <aura:attribute name="mapVar" type="List" />
+    <div class="slds-form" role="list">
+        <div class="slds-form__row">
+            <div class="slds-form__item" role="listitem">
+                <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                    <label class="slds-form-element__label" for="single-form-element-id-02">First Name</label>
+                    <div class="slds-form-element__control">
+                        <input type="text" id="single-form-element-id-02" placeholder="F Name" class="slds-input" />
+                    </div>
+                </div>
+            </div>
+            <div class="slds-form__item" role="listitem">
+                <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                    <label class="slds-form-element__label" for="single-form-element-id-03">Last Name</label>
+                    <div class="slds-form-element__control">
+                        <input type="text" id="single-form-element-id-03" placeholder="L Name" class="slds-input" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slds-form__row">
+            <div class="slds-form__item" role="listitem">
+                <div class="slds-form-element slds-form-element_horizontal slds-is-editing slds-form-element_1-col">
+                    <label class="slds-form-element__label" for="single-form-element-id-04">Address</label>
+                    <div class="slds-form-element__control">
+                        <textarea  id="single-form-element-id-04" placeholder="Placeholder Text" class="slds-textarea">Address</textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-form-element slds-has-error">
+                <label class="slds-form-element__label" for="select-01">
+                    <abbr class="slds-required" title="required">* </abbr>Gender</label>
+                <div class="slds-form-element__control">
+                    <div class="slds-select_container">
+                        <select aria-describedby="error-01" class="slds-select" id="select-01" required="">
+                            <option value="">Please select Gender</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="slds-form-element__help" id="error-01">This field is required</div>
+            </div>
+        </div>
+        <button class="slds-button">Button</button>
+        <button class="slds-button slds-button_neutral">Neutral Button</button>
+        <button class="slds-button slds-button_brand">Brand Button</button>
+        <button class="slds-button slds-button_outline-brand">Outline Brand Button</button>
+        <button class="slds-button slds-button_destructive">Destructive Button</button>
+        <button class="slds-button slds-button_text-destructive">Text Destructive Button</button>
+        <button class="slds-button slds-button_success">Success Button</button>
+    </div>
+    <aura:iteration items="{!v.colourList}" var="item">
+        {!item}<br/>
+    </aura:iteration>
+    <aura:iteration items="{!v.mapVar}" var="map">
+        Create map----------------->
+        key :-{!map.key}  and value :{!map.value} <br/>
+    </aura:iteration>
+    <lightning:button label="CreateMap" onclick="{!c.doCreatMap}" />
+</aura:component>

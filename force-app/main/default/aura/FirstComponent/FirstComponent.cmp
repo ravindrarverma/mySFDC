@@ -1,0 +1,26 @@
+<aura:component controller="FirstComponentController">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="accountList" type="List"/>
+    <table id="myTable" style="width:100%">
+        
+        <tr>
+            
+            <th> <div id="myTable">   
+                <lightning:button  label="Id" onclick="{v.sortTable(0)}" />
+                </div></th>
+            <th> <div id="myTable">   
+                <lightning:button  label="Name" onclick="{v.sortTable(1)}" />
+                </div></th>
+            <th> <div id="myTable">   
+                <lightning:button  label="Number" onclick="{v.sortTable(2)}" />
+                </div></th>
+        </tr>
+        <aura:iteration items="{!v.accountList}" var="acc">
+            <tr>
+                <td>{!acc.Id}</td>
+                <td>{!acc.Name}</td>
+                <td>{!acc.AccountNumber}</td>
+            </tr>
+        </aura:iteration>
+    </table>
+</aura:component>

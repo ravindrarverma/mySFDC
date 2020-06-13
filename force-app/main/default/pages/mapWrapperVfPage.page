@@ -1,0 +1,61 @@
+<!--<apex:page controller="mapWrapperClass">
+<apex:form >
+<apex:pageBlock title="Hello {!$User.FirstName}!"/>
+<apex:pageBlock >
+<apex:pageBlockSection columns="4">
+<table>
+<apex:repeat value="{!wrapList}" var="aa">
+<tr>
+<td>{!aa.acc.Name}</td>
+<td>{!aa.inn}</td>
+<td>{!aa.dbw}</td>
+<td>{!aa.dbl}</td>
+</tr>
+</apex:repeat>
+</table>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>-->
+<apex:page sidebar="false" controller="mapWrapperClass">
+     <script type="text/javascript">
+    function selectAllCheckboxes(obj,receivedInputID){
+        var inputCheckBox = document.getElementsByTagName("input");                  
+        for(var i=0; i<inputCheckBox.length; i++){          
+            if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1){                                     
+                inputCheckBox[i].checked = obj.checked;
+            }
+        }
+    }
+    </script>
+    <apex:form >
+        <apex:pageBlock title="Hello {!$User.FirstName}!"/>
+        <apex:pageBlock >
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Show Selected Accounts" action="{!processSelected}" rerender="table2"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+                <apex:pageBlockTable value="{!wrapList}"  var="w">
+                    <apex:column >
+                        <apex:facet name="header">
+                            <apex:inputCheckbox onclick="selectAllCheckboxes(this,'inputId')"/>
+                        </apex:facet>
+                        <apex:inputCheckbox value="{!w.selected}" id="inputId"/>
+                    </apex:column>
+                    <apex:column headervalue="AccountName" value=" {!w.acc.Name}"/>
+                    <apex:column headerValue="Number Of Contacts" value=" {!w.inn}"/>
+                    <apex:column headervalue="Closed Won Sum" value="{!w.dbw}"/>
+                    <apex:column headerValue="Closed Lost Sum" value="{!w.dbl}"/>
+               <!--      <apex:column value="{!w.swl}" headerValue="Sum of Closed Won and Lost"/>-->
+                </apex:pageBlockTable>
+                 <apex:pageBlockTable value="{!selectedAccounts}" var="c" id="table2" title="Selected Accounts">
+                    <apex:column value="{!c.acc.Name}" headerValue="Account Name"/>
+                    <apex:column value="{!c.acc.Phone}" headerValue="Phone"/>
+                    <apex:column value="{!c.swl}" headerValue="Sum of Closed Won and Lost"/>
+                 <!--    <apex:column value="{!c.dbw}" headerValue="Closed Won Sum"/>
+                     <apex:column value="{!c.dbl}" headerValue="Closed Lost Sum"/> -->
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

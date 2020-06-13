@@ -1,0 +1,28 @@
+<apex:page controller="myvfClass">
+    <apex:form >
+        <apex:actionStatus startText="Searching......" id="as"></apex:actionStatus>
+        <!--A component that displays the status of an AJAX update request. 
+        An AJAX request can either be in progress or complete.-->
+        <!--1st way to call apex method-->
+        <apex:commandButton value="Save Accounts" action="{!accountDetails}" reRender="listofAccount" status="as" />
+        
+        <!--2nd way to call apex method-->
+        <button type="button" onclick="getAccountDetailJS()" style="color:pink">action function button </button>
+        <apex:actionFunction name="getAccountDetailJS" action="{!accountDetails}"/>
+        
+        <!--3rd way to call apex method-->
+        <apex:inputText >
+            <apex:actionSupport event="onchange" action="{!accountDetails}" />
+        </apex:inputText>
+        
+              
+        <apex:repeat value="{!accList}" var="acc">
+            <br/>
+            {!acc.Name}
+        </apex:repeat>
+    </apex:form>
+    <script>
+    
+    
+    </script>
+</apex:page>

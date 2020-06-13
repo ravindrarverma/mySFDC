@@ -1,0 +1,13 @@
+<apex:page standardController="Account" recordSetVar="Accounts" extensions="datalist200Records10RecordsPerPage" >
+    <apex:sectionHeader title="Account List"/>
+    <apex:form >
+        <apex:dataTable value="{!Accounts}" var="acc">
+            <apex:facet name="header">Account Name</apex:facet>
+            <apex:column value="{!acc.Name}"></apex:column>
+        </apex:dataTable>
+        <apex:panelGrid columns="2">
+            <apex:commandLink action="{!previous}">Previous</apex:commandLink>
+            <apex:commandLink action="{!next}">Next</apex:commandLink>
+        </apex:panelGrid>
+    </apex:form>
+</apex:page>

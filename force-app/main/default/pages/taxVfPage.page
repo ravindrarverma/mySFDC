@@ -1,0 +1,16 @@
+<apex:page controller="taxCalculaor" ><!--renderAs="pdf"-->
+    <apex:form >
+       <button type="button" onclick="getAccountDetailJS()" style="color:pink">View TAX </button>
+        <apex:actionFunction name="getAccountDetailJS" action="{!taxCalculator}"/> 
+            <apex:pageBlock >
+            <apex:pageBlockSection columns="4">
+                <apex:pageBlockTable value="{!taxList}" var="acc" >
+                    <apex:column value="{!acc.Name}" />
+                    <apex:column value="{!acc.Age__c}" />
+                    <apex:column value="{!acc.Salary__c}" />
+                    <apex:column value="{!acc.Total_Tax__c}" />
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>   
+</apex:page>

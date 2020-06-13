@@ -1,0 +1,19 @@
+<apex:page Controller="oppWrapperClass">
+    <apex:form >
+        <apex:pageBlock title="Hello {!$User.FirstName}!"/>
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="4">
+                <table>
+                    <apex:repeat value="{!mapIDvsNoOfContactWrap}" var="aa">
+                        <apex:repeat value="{!mapIDvsNoOfContactWrap[aa]}" var="bb">
+                            <tr>
+                                <td>{!aa}</td>
+                                <td>{!bb}</td>
+                            </tr>
+                        </apex:repeat>
+                    </apex:repeat>
+                </table>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

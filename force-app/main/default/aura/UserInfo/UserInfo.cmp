@@ -1,0 +1,15 @@
+<aura:component >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="userDetailsList" type="List"/>
+    
+    <table id="myTable" style="width:100%">
+        <aura:iteration items="{!v.userDetailsList}" var="udl">
+            <tr>
+                <td>{!udl.Name}</td>
+                <td>{!udl.UserRole.Name}</td>
+                
+                
+            </tr>
+        </aura:iteration>
+    </table>
+</aura:component>

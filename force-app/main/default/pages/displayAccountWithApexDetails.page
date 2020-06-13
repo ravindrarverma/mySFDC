@@ -1,0 +1,13 @@
+<apex:page Controller="accDetails" >
+    <apex:sectionHeader title="Account List"/>
+    
+    <apex:form >
+        <apex:outputPanel layout="block"  style="overflow:auto;width:850px;height:350px"><!--responsible for 
+            scrollable-->
+            <apex:dataTable value="{!accList1}" var="acc" >
+                <apex:column value="{!acc.Name}" headerValue="Name"></apex:column>
+                <apex:column value="{!acc.Phone}" headerValue="Phone"></apex:column>
+            </apex:dataTable>
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>

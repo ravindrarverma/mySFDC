@@ -1,0 +1,8 @@
+<aura:component controller="customSettingClass">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="customsettingList"  type="List" />
+    <aura:iteration items="{!v.customsettingList}" var="i">
+        <p>{!i.Country__c}</p>
+        <p>{!i.	Capital__c}</p>
+    </aura:iteration>
+</aura:component>

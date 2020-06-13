@@ -1,0 +1,12 @@
+<apex:page standardController="Account" extensions="TaxDetails">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection title="Current account record Id is : {!RecordId}" collapsible="false">
+                 <apex:outputField value="{!accList.Name}"/>
+                <apex:outputField value="{!accList.Age__c}"/>
+                <apex:outputField value="{!accList.Salary__c}"/>
+                <apex:outputField value="{!accList.Total_Tax__c}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

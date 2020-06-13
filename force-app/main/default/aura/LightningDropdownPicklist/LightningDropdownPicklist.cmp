@@ -1,0 +1,32 @@
+<aura:component controller="DropdowndataClass" >
+    <aura:attribute name="dataList" type="List" />
+    <div>
+        <lightning:select aura:id="select" name="select" label="Select a Option" onchange="{! c.onChange }">
+            <option value="">choose one...</option>
+            <option value="Closed Won">Closed Won</option>
+            <option value="Closed Lost">Closed Lost</option>
+            <option value="Recently Created">Recently Created</option>
+            <option value="Recently Updated">Recently Updated</option>
+        </lightning:select>
+        <div> 
+            <c:AccountModal />
+        </div>
+    </div> 
+    <div>
+        <table style="width:100%">
+            <tr>
+                <th class="id1">Id</th>
+                <th class="acid">AccountId</th>
+                <th class="name">Name</th>
+            </tr>
+            <aura:iteration items="{!v.dataList}" var="v">
+                <tr>
+                    <td>{!v.Id}</td>
+                    <td>{!v.AccountId}</td>
+                    <td>{!v.Name}</td>
+                </tr>
+            </aura:iteration>
+        </table>
+        
+    </div>
+</aura:component>

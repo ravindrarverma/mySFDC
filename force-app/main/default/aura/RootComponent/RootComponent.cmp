@@ -1,0 +1,8 @@
+<aura:component >
+    <aura:handler name="SourceComponent" event="c:CompEvent"
+                  action = "{!c.handleEvent}" />
+    <div class= "slds-p-around_small" >
+        Root Component <br/>
+        <c:HandleComponent/>
+    </div>
+</aura:component>
