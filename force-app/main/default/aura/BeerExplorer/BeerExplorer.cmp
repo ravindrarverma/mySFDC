@@ -5,7 +5,6 @@
     <aura:attribute name="beerList" type="Object" />
     <div>
         <c:HeaderComponent TagLine="BeerExplorer" 
-                           message="Search and Order Beer in a  manner!" />
                            message="Search and Order Beer in a ravindra  manner!" />
     </div>
     <div>
